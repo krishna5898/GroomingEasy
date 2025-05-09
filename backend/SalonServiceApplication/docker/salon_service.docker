@@ -1,0 +1,13 @@
+FROM openjdk:17
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the application JAR file to the container
+COPY target/salon-service.jar salon-service.jar
+
+# Expose the port on which the service runs
+EXPOSE 9191
+
+# Run the application
+ENTRYPOINT ["java", "-jar", "salon-service.jar"]
