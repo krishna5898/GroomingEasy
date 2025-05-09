@@ -1,0 +1,95 @@
+/* Container to ensure horizontal scrolling */
+.scrolling-container {
+  width: 100%; /* Full width of the page */
+  overflow: hidden; /* Hide overflowing content */
+  position: relative;
+  background-color: #eef2f7; /* Optional background color */
+  padding: 15px 0; /* Breathing space */
+}
+
+/* Track for scrolling items */
+.scrolling-track {
+  display: flex;
+  animation: scroll 20s linear infinite; /* Continuous scrolling */
+  animation-play-state: running; /* Default scroll state */
+}
+
+/* Pause scrolling when parent has the 'paused' class */
+.scrolling-container.paused .scrolling-track {
+  animation-play-state: paused; /* Stops animation */
+}
+
+/* Individual grid items */
+.grid-item {
+  flex-shrink: 0; /* Prevent grid items from shrinking */
+  width: 300px; /* Set uniform width for all items */
+  height: 500px; /* Set uniform height for all items */
+  margin-right: 15px; /* Space between items */
+  background-color: #fff; /* Background for the grid */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover */
+}
+
+.grid-item:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Elevated shadow */
+}
+
+/* Styling for images */
+.item-image {
+  width: 100%; /* Makes the image fill the container's width */
+  height: 100%; /* Ensures the image fills the container's height */
+  object-fit: cover; /* Crops the image to fit the container while maintaining its aspect ratio */
+  border-radius: 8px; /* Optional: Rounded corners for aesthetics */
+}
+
+.item-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.item-address,
+.item-owner,
+.item-contact,
+.item-email {
+  font-size: 14px;
+  margin: 3px 0;
+}
+
+/* Continuous scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0); /* Start */
+  }
+  100% {
+    transform: translateX(-100%); /* End */
+  }
+}
+
+/* Book Now Button Styling */
+.book-now-button {
+  margin: 10px 0;
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #4A90E2, #50E3C2);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.book-now-button:hover {
+  transform: scale(1.1); /* Scaling effect */
+  background: linear-gradient(90deg, #357ABD, #33D4B5); /* Hover gradient */
+}

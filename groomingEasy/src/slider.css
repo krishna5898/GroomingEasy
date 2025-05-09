@@ -1,0 +1,67 @@
+/* Main slider styling */
+.slider {
+    width: 100%; /* Full-width slider */
+    overflow: hidden; /* Ensures only the visible part of slides is shown */
+    position: relative;
+}
+
+.slides {
+    display: flex; /* Arranges slides in a row */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for slide movement */
+}
+
+.slide {
+    min-width: 100%; /* Ensures each slide takes the full width */
+    height: auto;
+    position: relative;
+}
+
+.slide.active {
+    display: block; /* Show active slide */
+}
+
+
+/* Images in slides */
+.slide img {
+    width: 100%;
+    height: auto; /* Maintain image aspect ratio */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for images */
+.slide img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Navigation buttons */
+.slider button {
+    position: fixed;
+    top: 40%; /* Vertically center buttons */
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+    z-index: 10; /* Ensure buttons appear above slides */
+}
+
+.slider button:hover {
+    color: #4A90E2; /* Change button color on hover */
+}
+
+
+
+.slider .prev {
+    left: 10px; /* Position left button */
+}
+
+.slider .next {
+    right: 10px; /* Position right button */
+}
+
+.slider .prev:hover,
+.slider .next:hover {
+    color: #50E3C2;
+}

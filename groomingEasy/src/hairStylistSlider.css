@@ -1,0 +1,107 @@
+/* Main container for the circle grid */
+.circle-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between items */
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Individual circle item */
+  .circle-item {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Circle Container */
+  .circle {
+    width: 120px; /* Circle width */
+    height: 120px; /* Circle height */
+    perspective: 1000px; /* Enable 3D transformations */
+    margin: 0 auto;
+  }
+  
+  /* Inner Circle that flips */
+  .circle-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s; /* Smooth flipping animation */
+    transform-style: preserve-3d; /* Preserve 3D space for flip */
+  }
+  
+  /* Flip effect on hover */
+  .circle:hover .circle-inner {
+    transform: rotateY(180deg); /* Rotate to the back side */
+  }
+  
+  /* Front side of the circle */
+  .circle-front,
+  .circle-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide back face when front is visible */
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  /* Front face content */
+  .circle-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .circle-image {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Crop to fit inside the circle */
+    filter: grayscale(0); /* Default: Full color */
+    transition: filter 0.3s ease; /* Smooth grayscale transition */
+  }
+  
+  /* Gray out the image on hover */
+  .circle:hover .circle-image {
+    filter: grayscale(100%);
+  }
+  
+  /* Back face content */
+  .circle-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg); /* Back face starts flipped */
+  }
+  
+  /* Book Now Button Styling */
+  .book-stylist-now-button {
+    padding: 1px 4px;
+    background: linear-gradient(90deg, #4a90e2, #50e3c2); /* Gradient background */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .book-stylist-now-button:hover {
+    transform: scale(1.1); /* Slight scaling effect */
+    background: linear-gradient(90deg, #357abd, #33d4b5); /* Darker gradient */
+  }
+  
+  /* Name and Specialization Text */
+  .circle-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #333333;
+  }
+  
+  .circle-specialization {
+    font-size: 14px;
+    color: #555555;
+  }
+  

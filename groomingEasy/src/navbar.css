@@ -1,0 +1,35 @@
+/* Navbar Styling */
+.navbar-custom {
+    background-color: #333;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Grooming Easy Logo */
+#GroomingEasyLogo {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+/* Text Styling */
+.text {
+    animation: blinkTitle 2s infinite; /* Animation for blinking the title */
+    margin-right: 10px; /* Adds spacing between text and icon */
+    background: linear-gradient(90deg, #4A90E2, #50E3C2); /* Gradient color */
+    -webkit-background-clip: text; /* Clips gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes gradient apply to text */
+    
+
+}

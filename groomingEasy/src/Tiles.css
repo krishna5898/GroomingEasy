@@ -1,0 +1,132 @@
+/* Styling for interactive tiles */
+.tile {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px; /* Adjusted for tiles */
+    font-weight: bold;
+    text-transform: uppercase; /* Consistent with logo */
+    letter-spacing: .2px; /* Adds elegance */
+   
+    color: #4A90E2; /* Primary text color */
+    background: linear-gradient(90deg, #4A90E2, #50E3C2); /* Gradient background effect */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Applies gradient to text */
+    width: 150px; /* Square tile size */
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px; /* Smooth rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    cursor: pointer;
+  }
+  
+  /* Hover effect */
+  .tile:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+  }
+
+
+  .tile-container .tile h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px; /* Adjusted for tiles */
+    
+    text-transform: uppercase; /* Consistent with logo */
+    text-align: center;
+}
+  
+  /* Container styling for tiles */
+  .tile-container {
+    display: flex;
+    gap: 30px; /* Space between tiles */
+    justify-content: center; /* Aligns tiles in the center */
+    align-items: center; /* Centers tiles vertically */
+    padding: 25px;
+    background-color: #f9f9f9; /* Neutral background */
+  }
+  
+/* Modal Background */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it appears above all other elements */
+}
+
+/* Modal Content with Opening Animation */
+.modal-content {
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 8px;
+    width: 400px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: popUp 0.4s ease-out; /* Opening animation by default */
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 20px; /* Adjusts vertical alignment */
+    right: 25px; /* Adjusts horizontal alignment */
+    background: none;
+    border: none;
+    font-size: 20px; /* Set an appropriate size */
+    font-weight: bold;
+    color: #4A90E2; /* GroomingEasy color */
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.close-button:hover {
+    background: linear-gradient(90deg, #4A90E2, #50E3C2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Gradient color for text */
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+/* Keyframes for Opening Animation */
+@keyframes popUp {
+    0% {
+        transform: scale(0.5); /* Start small */
+        opacity: 0; /* Fully transparent */
+    }
+    60% {
+        transform: scale(1.05); /* Slight overshoot for a "bounce" effect */
+        opacity: 1; /* Visible */
+    }
+    100% {
+        transform: scale(1); /* Normal size */
+    }
+}
+
+/* Keyframes for Closing Animation */
+@keyframes popOut {
+    0% {
+        transform: scale(1); /* Normal size */
+        opacity: 1; /* Fully visible */
+    }
+    60% {
+        transform: scale(0.5); /* Shrinking effect */
+        opacity: 0; /* Fading out */
+    }
+    100% {
+        transform: scale(0); /* Completely gone */
+        opacity: 0; /* Invisible */
+    }
+}
+
+/* Closing Animation Class */
+.modal-content.pop-out {
+    animation: popOut 0.4s ease-out; /* Apply closing animation dynamically */
+}
+
+
+

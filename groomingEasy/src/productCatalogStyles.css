@@ -1,0 +1,73 @@
+/* Container for the product catalog */
+.product-catalog {
+  display: flex; /* Arrange items in a row */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 20px; /* Space between product cards */
+  justify-content: center; /* Center align the items */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Individual product item */
+.product-item {
+  display: flex; /* Align content horizontally */
+  flex-direction: column; /* Align content top to bottom */
+  align-items: center; /* Center align image and details */
+  width: 250px; /* Fixed width for each product card */
+  padding: 15px;
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  background-color: #fff; /* White background for cleaner UI */
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effects */
+}
+
+/* Hover effect for product card */
+.product-item:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+/* Product image styling */
+.product-image {
+  width: 100px; /* Fixed width */
+  height: 100px; /* Fixed height */
+  border-radius: 50%; /* Circular image */
+  object-fit: cover; /* Maintain proportions */
+  margin-bottom: 15px; /* Spacing below the image */
+}
+
+/* Product title styling */
+.product-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+/* Product description styling */
+.product-description {
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 15px; /* Bottom spacing */
+}
+
+/* Add to cart button styling */
+.add-to-cart-button {
+  background: linear-gradient(90deg, #357abd, #33d4b5);
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px; /* Rounded button */
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for the button */
+.add-to-cart-button:hover {
+  background-color: #357abd; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
